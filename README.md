@@ -26,7 +26,7 @@ Available environments:
 
 We recommend using the latest package release for Node 18:
 
-> `@baalspots/now@2.0.0`
+> `@baalspots/now`
 
 ## Before deploying
 
@@ -37,7 +37,7 @@ We recommend using the latest package release for Node 18:
   "builds": [
     {
       "src": "package.json",
-      "use": "@baalspots/now@2.0.0"
+      "use": "@baalspots/now"
     }
   ],
   "buildCommand": "node -v && npx frontity build && node -v",
