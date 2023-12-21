@@ -1,0 +1,54 @@
+{
+  "name": "@baalspots/now",
+  "version": "2.0.0",
+  "description": "A custom Frontity builder for deploying to Vercel",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baalspots/frontity-vercel-builder.git"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "main": "./dist/index.js",
+  "keywords": [
+    "frontity",
+    "vercel",
+    "builder"
+  ],
+  "author": "Baal & Spots",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/baalspots/frontity-vercel-builder/issues"
+  },
+  "homepage": "https://github.com/baalspots/frontity-vercel-builder#readme",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "test": "tsc && jest",
+    "prepublishOnly": "tsc"
+  },
+  "peerDependencies": {
+    "@vercel/build-utils": "^7.4.1",
+    "@vercel/routing-utils": "^3.1.0"
+  },
+  "dependencies": {
+    "@vercel/node-bridge": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "@vercel/build-utils": "^7.4.1",
+    "@vercel/routing-utils": "^3.1.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^27.6.0",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,2 +1,121 @@
-# frontity-vercel-builder
- Updated builder for deploying Frontity projects to Vercel.
+# Frontity Vercel Builder
+
+Deploy your [Frontity](https://frontity.org) project to Vercel.
+
+Available environments:
+
+<details>
+<summary>Node v16.x</summary>
+
+```
+@baalspots/now@1.x
+```
+
+</details>
+
+<details>
+<summary>Node v18.x</summary>
+
+```
+@baalspots/now@2.x
+```
+
+</details>
+
+<br />
+
+We recommend using the latest package release for Node 18:
+
+> `@baalspots/now@2.0.0`
+
+## Before deploying
+
+1. Include the following settings in your projects `vercel.json` file:
+
+```json
+{
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@baalspots/now@2.0.0"
+    }
+  ],
+  "buildCommand": "node -v && npx frontity build && node -v",
+  "devCommand": "npx frontity dev",
+  "framework": null,
+  "installCommand": "npm i",
+  "outputDirectory": "build"
+}
+```
+
+2. Update your Frontity projects local dev environment to use Node 18.
+
+3. Update `package.json` at the root of your project to use the following Node engine and scripts:
+
+```json
+"engines": {
+ "node": "18.x"
+},
+"scripts": {
+ "dev": "npx frontity dev",
+ "build": "node -v && npx frontity build && node -v",
+ "serve": "npx frontity serve"
+},
+```
+
+4. Remove all `package-lock.json` files and `node-modules` folders in your Frontity project.
+
+5. Remove `package-lock.json` from your projects `.gitignore` file
+
+6. Run `npm i` at the root of your project.
+
+## Hotfix for @loadable/component default export error
+
+This is a temporary fix for the [@loadable/component bug reported on Dec 19](https://github.com/gregberge/loadable-components/issues/990). Once this issue is resolved by the maintainers at @loadable/component, the following code snippets should be removed.
+
+1. Add the following dependency to your projects root `package.json` file:
+
+```json
+"@loadable/component": "5.15.3",
+```
+
+2. Add the following override settings to the end of your projects root `package.json` file:
+
+```json
+"overrides": {
+  "@loadable/component": "5.15.3"
+}
+```
+
+3. Remove all `package-lock.json` files and `node-modules` folders in your Frontity project.
+4. Run `npm i` at the root of your project.
+
+### Example package.json file
+
+```json
+{
+  "name": "frontity-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontity project",
+  "engines": {
+    "node": "18.x"
+  },
+  "scripts": {
+    "dev": "npx frontity dev",
+    "build": "node -v && npx frontity build && node -v",
+    "serve": "npx frontity serve"
+  },
+  "dependencies": {
+    "@loadable/component": "5.15.3",
+    ...
+  },
+  "devDependencies": {
+    ...
+  },
+  "overrides": {
+    "@loadable/component": "5.15.3"
+  }
+}
+
+```
