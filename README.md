@@ -48,13 +48,13 @@ We recommend using the latest package release for Node 18:
 }
 ```
 
-2. Update your Frontity projects local dev environment to use Node 18.
+2. Update your Frontity projects local dev environment to use Node 16.
 
 3. Update `package.json` at the root of your project to use the following Node engine and scripts:
 
 ```json
 "engines": {
- "node": "18.x"
+ "node": "16.x"
 },
 "scripts": {
  "dev": "npx frontity dev",
@@ -99,7 +99,7 @@ This is a temporary fix for the [@loadable/component bug reported on Dec 19](htt
   "private": true,
   "description": "Frontity project",
   "engines": {
-    "node": "18.x"
+    "node": "16.x"
   },
   "scripts": {
     "dev": "npx frontity dev",
