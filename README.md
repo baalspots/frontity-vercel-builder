@@ -2,32 +2,6 @@
 
 Deploy your [Frontity](https://frontity.org) project to Vercel.
 
-Available environments:
-
-<details>
-<summary>Node v16.x</summary>
-
-```
-@baalspots/now@1.x
-```
-
-</details>
-
-<details>
-<summary>Node v18.x</summary>
-
-```
-@baalspots/now@2.x
-```
-
-</details>
-
-<br />
-
-We recommend using the latest package release for Node 18:
-
-> `@baalspots/now`
-
 ## Before deploying
 
 1. Include the following settings in your projects `vercel.json` file:
@@ -95,8 +69,6 @@ This is a temporary fix for the [@loadable/component bug reported on Dec 19](htt
 ```json
 {
   "name": "frontity-project",
-  "version": "1.0.0",
-  "private": true,
   "description": "Frontity project",
   "engines": {
     "node": "16.x"
